@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from '../button/Button.component';
+import Button from '../Button/Button.component';
 
 export const PaymentFormContainer = styled.div`
     height: 300px;
