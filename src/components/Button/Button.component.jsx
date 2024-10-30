@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { BaseButton, GoogleSignInButton, InvertedButton } from './Button.styles';
+import { BaseButton, 
+  GoogleSignInButton, 
+  InvertedButton,
+  ButtonSpinner
+} from './Button.styles';
 
 export const BUTTON_TYPE_CLASSES = {
   base: 'base',
@@ -17,13 +21,15 @@ const getButton = (buttonType= BUTTON_TYPE_CLASSES.base) => (
 );
 
 // Props: children, qualsiasi tag o testo, tipo di bottone ed eventuali altre props
-const Button = ({ children, buttonType, ...otherProps }) => {
+const Button = ({ children, buttonType, isLoading, ...otherProps }) => {
   const CustomButton = getButton(buttonType);
+  // Disabilita il pulsante mentre sta caricando la transazione
   return (
-    <CustomButton className={ `button-container ${BUTTON_TYPE_CLASSES[buttonType]}`} {...otherProps}>
-        {children}
+    <CustomButton disabled={isLoading} className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`} {...otherProps}>
+      {isLoading ? <ButtonSpinner /> : children}
     </CustomButton>
-  )
+  );
 }
+
 
 export default Button;
