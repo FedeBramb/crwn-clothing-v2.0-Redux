@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import FormInput from '../FormInput/FormInput.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button.component';
@@ -20,6 +21,7 @@ const defaultFormFields = {
 const SignInForm = () => {
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { email, password } = formFields;
+    const navigate = useNavigate();
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields)
@@ -31,6 +33,7 @@ const SignInForm = () => {
             const userCredential = await signInAuthWithEmailAndPassword(email, password);
             const user = userCredential.user;
             resetFormFields();
+            navigate('/')
           } catch (error) {
             switch(error.code) {
                 case 'auth/wrong-password':
