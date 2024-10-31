@@ -1,4 +1,5 @@
 import {  useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import FormInput from '../FormInput/FormInput.component.jsx';
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button.component.jsx';
@@ -19,6 +20,7 @@ const defaultFormFields = {
 const SignUpForm = () => {
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
+    const navigate = useNavigate();
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -31,7 +33,7 @@ const SignUpForm = () => {
           alert('passwords do not match');
           return;
         }
-    
+        
         try {
           const { user } = await createAuthUserWithEmailAndPassword(
             email,
@@ -40,6 +42,7 @@ const SignUpForm = () => {
     
           await createUserDocumentFromAuth(user, { displayName });
           resetFormFields();
+          navigate('/');
         } catch (error) {
           if (error.code === 'auth/email-already-in-use') {
             alert('Cannot create user, email already in use');

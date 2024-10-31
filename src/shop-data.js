@@ -56,6 +56,24 @@ const SHOP_DATA = [
         imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
         price: 16,
       },
+      {
+        id: 10,
+        name: 'Grey Snapback',
+        imageUrl: 'https://i.ibb.co/fHRF6vJ/kilyan-sockalingum-q-U9u-Fpbf-XUo-unsplash.jpg',
+        price: 18,
+      },
+      {
+        id: 11,
+        name: 'Icecream cap',
+        imageUrl: 'https://i.ibb.co/dBnKQD1/hat-Ice-Cream.webp',
+        price: 15,
+      },
+      {
+        id: 12,
+        name: 'Wool cap',
+        imageUrl: 'https://i.ibb.co/BzvdQH6/berretto-Nero.webp',
+        price: 18,
+      }
     ],
   },
   {
@@ -144,6 +162,24 @@ const SHOP_DATA = [
         imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
         price: 185,
       },
+      {
+        id: 23,
+        name: 'Mountain Jack',
+        imageUrl: 'https://i.ibb.co/NWpD7w9/jakect-Colom-Blue.webp',
+        price: 185,
+      },
+      {
+        id: 24,
+        name: 'Brown Bomba',
+        imageUrl: 'https://i.ibb.co/c3MXWNk/jackets-Brown-Colletto.webp',
+        price: 120,
+      },
+      {
+        id: 25,
+        name: 'Jeans JacK',
+        imageUrl: 'https://i.ibb.co/m9Pg1Nd/jackets-One.webp',
+        price: 80,
+      },
     ],
   },
   {
@@ -191,6 +227,12 @@ const SHOP_DATA = [
         imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
         price: 20,
       },
+      {
+        id: 30,
+        name: 'White Mint',
+        imageUrl: 'https://i.ibb.co/4MH77Y1/woman-Shirt-One.webp',
+        price: 32,
+      }
     ],
   },
   {
@@ -231,6 +273,18 @@ const SHOP_DATA = [
         name: 'Burgundy T-shirt',
         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
         price: 25,
+      },
+      {
+        id: 36,
+        name: 'White&Black shirt',
+        imageUrl: 'https://i.ibb.co/1JgvJDH/man-Shirt-Black-WHite.webp',
+        price: 32,
+      },
+      {
+        id: 37,
+        name: 'Checkmate shirt',
+        imageUrl: 'https://i.ibb.co/jZKVXkm/man-Square-Shirt.webp',
+        price: 33,
       },
     ],
   },

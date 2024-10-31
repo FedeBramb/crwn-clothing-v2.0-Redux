@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 
+import SHOP_DATA from '../../shop-data';
 import { 
   getAuth, // Richiesta autorizzione
   signInWithRedirect, // Log In Google nuova finestra
@@ -57,18 +58,49 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 export const db = getFirestore();
 
 // 
-export const addCollectionAndDocuments = async (collectionkey, objectsToAdd) => {
-  const collectionRef = collection(db, collectionkey);
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+  const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
 
-  // Object riferisce a ogni oggetto dell'array SHOP_DATA
-  objectsToAdd.forEach((object) => {
-    const docRef = doc(collectionRef, object.title.toLowerCase());
-    batch.set(docRef, object);  
-  })
+  for (const object of objectsToAdd) {
+      const docRef = doc(collectionRef, object.title.toLowerCase());
 
+      // Controlla se il documento della collezione esiste già
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+          const existingData = docSnap.data();
+
+          // Confronta gli oggetti interni per vedere se sono già presenti
+          object.items.forEach((newItem) => {
+              const itemExists = existingData.items.some(
+                  (existingItem) => existingItem.id === newItem.id
+              );
+
+              if (!itemExists) {
+                  // Se l'oggetto non esiste, aggiungilo
+                  existingData.items.push(newItem);
+              } else {
+                  console.log(`L'elemento ${newItem.name} esiste già in ${object.title}.`);
+              }
+          });
+
+          // Aggiorna il documento con i nuovi dati
+          batch.set(docRef, existingData);
+      } else {
+          // Se il documento non esiste, aggiungilo direttamente
+          batch.set(docRef, object);
+      }
+  }
+
+  // Esegui il batch per salvare tutte le modifiche
   await batch.commit();
+  console.log("Dati caricati su Firebase senza duplicati.");
 };
+
+// addCollectionAndDocuments('categories', SHOP_DATA)
+//     .then(() => console.log("Dati caricati senza duplicati"))
+//     .catch(error => console.error("Errore nel caricamento: ", error));
 
 export  const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, 'categories');
