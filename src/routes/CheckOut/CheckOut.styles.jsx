@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CheckOutHeader = styled.div`
   width: 100%;
-  padding: 10px 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
@@ -23,11 +23,11 @@ export const CheckOutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
+  margin: 5rem auto 0;
 
   .total {
-    margin-top: 30px;
+    margin-top: 3rem;
     margin-left: auto;
-    font-size: 36px;
+    font-size: 3.6rem;
   }
 `

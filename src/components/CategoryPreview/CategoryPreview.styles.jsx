@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 export const PreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 `
 
 export const Title = styled(Link)`
-  font-size: 28px;
-  margin-bottom: 25px;
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
   cursor: pointer;
 `
 
 export const Preview = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 20px; 
+  column-gap: 2rem; 
 `

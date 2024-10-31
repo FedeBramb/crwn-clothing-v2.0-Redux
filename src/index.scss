@@ -2,9 +2,16 @@
     box-sizing: border-box;
 }
 
+// Imposta la font-size a 10px, conversioni rem più facili
+:root {
+    font-size: 62.5%;
+}
+
+// Riporta a 16px il font.
 body {
     margin: 0;
     font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.6rem; /* 16px */
     padding: 20px 40px;
 }
 

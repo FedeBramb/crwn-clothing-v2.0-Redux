@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const SignInFormContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 380px;
+    width: 38rem;
 
     h2 {
-        margin: 10px 0;
+        margin: 1rem 0;
     }
 `
 export const ButtonsContainer = styled.div`

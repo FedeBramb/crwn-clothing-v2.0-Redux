@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const AuthenticationContainer = styled.div`
     display: flex;
-    width: 990px;
+    width: 99rem;
     justify-content: space-between;
-    margin: 30px auto
+    margin: 3rem auto
 `
 
