@@ -64,7 +64,7 @@ const SignUpForm = () => {
 
     return (
         <SignUpContainer>
-            <h2>Non hai un account?</h2>
+            <h1>Non hai un account?</h1>
             <span>Registrati con la tua email e password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput 

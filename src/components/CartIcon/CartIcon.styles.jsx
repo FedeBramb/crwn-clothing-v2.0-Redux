@@ -10,6 +10,15 @@ export const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: color 1s ease;
+
+  &.black {
+    color: black;
+  }
+
+  &.white {
+    color: white;
+  }
 `
 
 export const ShopBagIcon = styled(ShopBagSvg)`

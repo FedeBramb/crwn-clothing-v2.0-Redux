@@ -17,7 +17,6 @@ const defaultFormFields = {
     password: ''
 }
 
-
 const SignInForm = () => {
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { email, password } = formFields;
@@ -33,7 +32,7 @@ const SignInForm = () => {
             const userCredential = await signInAuthWithEmailAndPassword(email, password);
             const user = userCredential.user;
             resetFormFields();
-            navigate('/')
+            navigate('/');
           } catch (error) {
             switch(error.code) {
                 case 'auth/wrong-password':
@@ -54,13 +53,14 @@ const SignInForm = () => {
     
     const signInWithGoogle = async () => {
         await signInWithGooglePopup();
+        navigate('/');
     }
 
     
   return (
     <SignInFormContainer>
         <form onSubmit={handleSubmit}>
-            <h2>Hai già un account?</h2>
+            <h1>Hai già un account?</h1>
             <span>Accedi con la tua email e password</span>
             <FormInput
                 label='Email'
@@ -79,8 +79,19 @@ const SignInForm = () => {
                 onChange={handleChange}
             />
             <ButtonsContainer>
-                <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type='submit'>Log In</Button>
-                <Button buttonType={BUTTON_TYPE_CLASSES.google} type='button' onClick={signInWithGoogle}>Google Sign In</Button>
+                <Button 
+                    buttonType={BUTTON_TYPE_CLASSES.inverted} 
+                    type='submit'
+                >
+                    Log In
+                </Button>
+                <Button buttonType={BUTTON_TYPE_CLASSES.google} 
+                    type='button' 
+                    onClick={signInWithGoogle}
+                    className='no-display'
+                >
+                    Google Sign In
+                </Button>
             </ButtonsContainer>
         </form>
     </SignInFormContainer>

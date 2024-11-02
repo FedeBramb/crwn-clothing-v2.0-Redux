@@ -21,9 +21,9 @@ const CheckOutItem = ({cartItem}) => {
     const cartItems = useSelector(selectCartItems);
     const dispatch = useDispatch();
 
-    const clearItemHandler = () => dispatch(clearItemFromCart(cartItem));
+    const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, cartItem));
     const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
-    const removeItemHandler = () => dispatch(removeItemFromCart(cartItem));
+    const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, cartItem));
 
   return (
     <CheckOutItemContainer>

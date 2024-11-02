@@ -8,15 +8,16 @@ import {
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
-  width: 24rem;
-  height: 34rem;
+  width: 38rem;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
   border: 1px solid black;
+  border-radius: 3px;
   background-color: white;
-  top: 9rem;
-  right: 4rem;
+  top: 7rem;
+  right: 11rem;
   z-index: 5;
 
   ${BaseButton},
@@ -24,6 +25,12 @@ export const CartDropdownContainer = styled.div`
   ${InvertedButton} {
     margin-top: auto;
   }
+
+  @media screen and (max-width: 480px) {
+    width: 98vw;
+    right: 0.4rem;
+    height: calc(100vh - 12rem);
+  }  
 `
 export const EmptyMessage = styled.span`
   font-size: 1.8rem;
@@ -31,9 +38,10 @@ export const EmptyMessage = styled.span`
 `
 
 export const CartItemsContainer = styled.div`
-  height: 24rem;
+  height: 35rem;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `
 

@@ -19,8 +19,8 @@ export const FormInputLabel = styled.label`
   top: 1rem;
   transition: 300ms ease all;
 
-  ${({shrink}) => shrink && shrinkLabelStyles};
-`
+  ${({ shrink }) => shrink && shrinkLabelStyles};
+`;
 
 export const Input = styled.input`
   background: none;

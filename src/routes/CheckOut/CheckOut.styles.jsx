@@ -15,6 +15,10 @@ export const CheckOutHeader = styled.div`
       width: 8%;
     }
   }
+
+  @media screen and (max-width: 560px) {
+    display: none;
+  }
 `
 
 export const CheckOutContainer = styled.div`
@@ -29,5 +33,13 @@ export const CheckOutContainer = styled.div`
     margin-top: 3rem;
     margin-left: auto;
     font-size: 3.6rem;
+  }
+
+  @media screen and (max-width: 876px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 560px) {
+    width: 98vw;
   }
 `

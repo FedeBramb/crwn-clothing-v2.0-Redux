@@ -20,6 +20,7 @@ export const BaseButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
 
   &:hover {
     background-color: white;
@@ -47,6 +48,21 @@ export const InvertedButton = styled(BaseButton)`
     background-color: black;
     color: white;
     border: none;
+  }
+`
+
+export const ProductButton = styled(BaseButton)`
+  border: 1px solid white;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 3px;
+  position: absolute;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    transform: scale(0.95); /* Slightly enlarges the div */
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
   }
 `
 

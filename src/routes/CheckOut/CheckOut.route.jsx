@@ -28,7 +28,7 @@ const CheckOut = () => {
           <span>Prezzo</span>
         </div>
         <div className='header-block'>
-          <span>Remove</span>
+          <span>Rimuovi</span>
         </div>
       </CheckOutHeader>
         {cartItems.map((cartItem) => {

@@ -62,6 +62,8 @@ const PaymentForm = () => {
     <PaymentFormContainer>
         <FormContainer onSubmit={paymentHandler}>
             <h2>Pagamento con Credit Card: </h2>
+            <p>Per testing: 4242424242424242
+            </p>
             <CardElement />
             <PaymentButton 
               isLoading={isProcessingPayment} 

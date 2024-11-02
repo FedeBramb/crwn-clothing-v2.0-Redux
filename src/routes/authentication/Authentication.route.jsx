@@ -12,9 +12,8 @@ const Authentication = () => {
     
   return (
     <AuthenticationContainer>
-        { /*<button onClick={logGoogleUser}>Sign in with Google Popup</button>*/ }
-        <SignInForm />
-        <SignUpForm />
+      <SignInForm />
+      <SignUpForm />
     </AuthenticationContainer>
   )
 }

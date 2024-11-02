@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import { BackgroundImage, Body, DirectoryItemContainer } from './DirectoryItem.styles';
+import { BackgroundImage, Body, DirectoryItemContainer, Title } from './DirectoryItem.styles';
 
 function DirectoryItem({ category }) {
   const { imageUrl, title, route } = category;
@@ -12,10 +12,10 @@ function DirectoryItem({ category }) {
 
   return (
     <DirectoryItemContainer onClick={onNavigateHandler}>
-        <BackgroundImage $imageUrl={imageUrl} /> { /* $per non fare triggerare la console errori con custom prop */}
+      { /* $per non fare triggerare la console errori con custom prop */}
+        <BackgroundImage $imageUrl={imageUrl} /> 
         <Body>
-            <h2>{title}</h2>
-            <p>Compra ora</p>
+            <Title>{title}</Title>
         </Body>
     </DirectoryItemContainer>
   )

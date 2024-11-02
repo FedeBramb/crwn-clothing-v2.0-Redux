@@ -14,7 +14,7 @@ import './index.scss';
 
 // Qualsiasi componente fuori da UserProvider non ha accesso al Context.
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <BrowserRouter>
@@ -24,5 +24,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </PersistGate>
     </Provider>
-  // </React.StrictMode>,
+  </React.StrictMode>,
 )
