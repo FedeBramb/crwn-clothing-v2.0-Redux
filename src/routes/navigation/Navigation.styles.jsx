@@ -10,12 +10,14 @@ export const NavigationContainer =  styled.div`
   background-color: transparent;
   transition: background-color 1s ease, height 1.2s ease;
   z-index: 100;
-  display: flex;
-  justify-content: space-between;
-
+  
   &.scrolled {
     background-color: rgba(255, 255, 255, 1);
     height: 7rem;
+  }
+
+  &.inverted-color {
+    background-color: #2a2a2a;
   }
 
   @media screen and (max-width: 1024px) {
@@ -31,8 +33,11 @@ export const NavigationContainer =  styled.div`
 export const NavLinksContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 7rem;
+  width: 100%;
+
+  
 `
 
 export const NavLink = styled(Link)`
@@ -40,6 +45,7 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   transition: color 1s ease;
   z-index: 100;
+
   
   &.black {
     color: black;
@@ -49,13 +55,15 @@ export const NavLink = styled(Link)`
     color: white;
   }
 
+  &:nth-child(2) { margin-left: auto; }
+
   @media screen and (max-width: 480px) {
       padding-left: 0.9rem;
     }
 `
 
 export const ShopLink = styled(NavLink)`
-  margin-top: 1.2rem;
+  
 `
 
 export const NavbarTitle = styled(Link)`
@@ -74,6 +82,10 @@ export const NavbarTitle = styled(Link)`
     color: white;
     letter-spacing: 7rem;
 
+    @media screen and (max-width: 1024px) {
+      letter-spacing: 5rem;
+    }
+
     @media screen and (max-width: 480px) {
       font-size: 9rem;
       transform: translate(-50%, -50%);
@@ -88,7 +100,7 @@ export const NavbarTitle = styled(Link)`
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;
-    color: black;
+    color: ${({ color }) => color};
 
     @media screen and (max-width: 480px) {
       font-size: 4rem;
@@ -105,4 +117,5 @@ export const NoImageContainer = styled.div`
 export const MainContent = styled.div`
     padding-top: 7rem;
     padding-bottom: 5rem;
+    height: 100%;
 `

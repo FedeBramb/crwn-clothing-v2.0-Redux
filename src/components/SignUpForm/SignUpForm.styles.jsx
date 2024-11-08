@@ -9,7 +9,7 @@ export const SignUpContainer = styled.div`
         width: 30rem;
     }
 
-    h2 {
-        margin: 1rem 0;
+    h1 {
+        color: #9a0707;
     }
 `

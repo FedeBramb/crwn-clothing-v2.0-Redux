@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
-
-// Diamo la priorità a BackgroundeImage così da averla disponibile
-//  in DirectoryItemContainer.
+// Riceve grid-area per poi 
 export const BackgroundImage = styled.div`
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   background-image: ${({ $imageUrl }) => `url(${$imageUrl})`};
+  height: 53.5rem;
+  position: relative;
 `
 
-export const Body = styled.div`
+export const CategoryOverlay = styled.div`
+  position: absolute; 
+  bottom: 20%; /* Partenza a metà altezza del genitore */ 
+  left: 50%; 
   height: 4rem;
   padding: 0 2.5rem;
   margin-bottom: 1rem;
@@ -24,13 +27,9 @@ export const Body = styled.div`
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(18px);
   border-radius: 3px;
-  position: absolute;
-  transition: transform 0.3s ease, background-color 0.3s ease;
 
   &:hover {
-    transform: scale(0.95); /* Slightly enlarges the div */
     background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
-    color: black;
   }
 `
 
@@ -40,25 +39,22 @@ export const Title = styled.div`
 `
 
 export const DirectoryItemContainer = styled.div`
+  grid-area: ${({ $gridArea }) => $gridArea};
   min-width: 31%;
-  height: 24rem;
   flex: 1 1 auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  border: 1px solid black;
   margin: 0 0.75rem 1.5rem;
   overflow: hidden;
+  position: relative;
 
   &:hover {
     cursor: pointer;
 
     & ${BackgroundImage} {
-      transform: scale(1.2);
-      transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transform: scale(1.1);
+      transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & ${Body} {
+    & ${CategoryOverlay} {
       opacity: 0.9;
     }
   }

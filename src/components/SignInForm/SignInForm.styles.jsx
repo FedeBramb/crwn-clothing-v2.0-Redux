@@ -5,8 +5,8 @@ export const SignInFormContainer = styled.div`
     flex-direction: column;
     width: 38rem;
 
-    h2 {
-        margin: 1rem 0;
+    h1 {
+        color: #9a0707;
     }
 
     @media screen and (max-width: 480px) {
@@ -17,7 +17,10 @@ export const ButtonsContainer = styled.div`
     display: flex;
     justify-content: space-between;
 
-    .no-display {
-        display: none;
+    @media screen and (max-width: 480px) {
+        .no-display {
+            display: none;
+        }
     }
+    
 `
