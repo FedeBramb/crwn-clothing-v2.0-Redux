@@ -10,7 +10,7 @@ export const BaseButton = styled.button`
   line-height: 5rem;
   padding: 0 3.5rem 0 3.5rem;
   font-size: 1.5rem;
-  background-color: black;
+  background-color: #2a2a2a;
   color: white;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed';
@@ -45,7 +45,7 @@ export const InvertedButton = styled(BaseButton)`
   border: 1px solid black;
 
   &:hover {
-    background-color: black;
+    background-color: #2a2a2a;
     color: white;
     border: none;
   }

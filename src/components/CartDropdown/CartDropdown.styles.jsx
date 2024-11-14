@@ -13,9 +13,9 @@ export const CartDropdownContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  border: 1px solid black;
-  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Ombra esterna */
   background-color: white;
+  border-radius: 5px;
   top: 7rem;
   right: 11rem;
   z-index: 5;

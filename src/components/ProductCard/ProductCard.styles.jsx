@@ -12,6 +12,7 @@ export const Image = styled.img`
   height: 95%;
   object-fit: cover;
   margin-bottom: 0.5rem;
+  border-radius: 5px;
 `
 
 export const ProductCardContainer = styled.div`
@@ -21,6 +22,7 @@ export const ProductCardContainer = styled.div`
   height: 35rem;
   align-items: center;
   position: relative;
+  font-weight: 900;
 
   ${BaseButton}, ${GoogleSignInButton}, ${InvertedButton} {
     width: 80%;

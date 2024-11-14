@@ -4,9 +4,9 @@ export const SignInFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 38rem;
-
+    
     h1 {
-        color: #9a0707;
+        color: #930101;
     }
 
     @media screen and (max-width: 480px) {

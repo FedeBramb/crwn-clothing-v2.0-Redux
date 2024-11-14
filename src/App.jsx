@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { onAuthStateChangedListener, createUserDocumentFromAuth } from './utils/firebase/firebase.utils.js';
 
+import GoToTop from './components/GoToTop/GoToTop.component.jsx';
 import Navigation from './routes/navigation/Navigation.component.jsx';
 import Home from './routes/home/Home.jsx';
 import Authentication from './routes/authentication/Authentication.route.jsx';
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <>
+      <GoToTop />
       <Routes>
         <Route path='/' element={<Navigation/>} >
         <Route index element={<Home />} />

@@ -35,6 +35,7 @@ const CheckOut = () => {
           return (
             <CheckOutItem key={cartItem.id} cartItem={cartItem} />
         )})}
+        {console.log(cartTotal)}
         <span className='total'>Totale $ {cartTotal}</span>
         <PaymentForm />
     </CheckOutContainer>  

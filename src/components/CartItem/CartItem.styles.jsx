@@ -5,6 +5,7 @@ export const ItemContainer = styled.div`
   display: flex;
   height: 80rem;
   margin-bottom: 1.5rem;
+  max-height: 150px;
 `
 
 export const ItemImg = styled.img`
@@ -22,4 +23,5 @@ export const ItemDetails = styled.div`
 
 export const Name = styled.span`
   font-size: 1.6rem;
+  font-weight: 900;
 `

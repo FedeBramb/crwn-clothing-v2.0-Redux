@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const subColor = 'grey';
-const mainColor = 'black';
+const mainColor = '#930101';
 
 // Definisco un mixin per spostare il testo e rimpicciolirlo
 export const shrinkLabelStyles = css`
