@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { 
-  BackgroundImage, 
+  BackgroundImage,
+  ExploreSelectionDiv,
   CategoryOverlay, 
   DirectoryItemContainer, 
-  Title 
+  Title,
+  Explore
 } from './DirectoryItem.styles';
 
 function DirectoryItem({ category }) {
@@ -43,7 +45,11 @@ function DirectoryItem({ category }) {
         transition={{ duration: 1.5 }} 
       >
         <Title>{title}</Title>
+        <ExploreSelectionDiv>
+          <Explore>ESPLORA LA SELEZIONE</Explore>
+        </ExploreSelectionDiv>
       </CategoryOverlay>
+      
     </DirectoryItemContainer>
   );
 }

@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
 import { selectCartTotal, selectCartItems } from '../../store/cart/cart.selector.js';
-
 import CheckOutItem from '../../components/CheckOutItem/CheckOutItem.component.jsx';
 import PaymentForm from '../../components/PaymentForm/PaymentForm.component.jsx';
-
-import { CheckOutContainer, CheckOutHeader } from './CheckOut.styles';
+import {
+  CheckOutContainer,
+  CheckOutHeader,
+  HeaderBlock,
+  CartItemsContainer,
+  TotalContainer,
+  PaymentContainer
+} from './CheckOut.styles';
 
 const CheckOut = () => {
   const cartItems = useSelector(selectCartItems);
@@ -14,30 +18,27 @@ const CheckOut = () => {
   
   return (
     <CheckOutContainer>
+      <h1>Il tuo carrello</h1>
       <CheckOutHeader>
-        <div className='header-block'>
-          <span>Prodotto</span>
-        </div>
-        <div className='header-block'>
-         <span>Descrizione</span>
-        </div>
-        <div className='header-block'>
-          <span>Quantità</span>
-        </div>
-        <div className='header-block'>
-          <span>Prezzo</span>
-        </div>
-        <div className='header-block'>
-          <span>Rimuovi</span>
-        </div>
+        <HeaderBlock>Prodotto</HeaderBlock>
+        <HeaderBlock>Descrizione</HeaderBlock>
+        <HeaderBlock>Quantità</HeaderBlock>
+        <HeaderBlock>Prezzo</HeaderBlock>
+        <HeaderBlock>Rimuovi</HeaderBlock>
       </CheckOutHeader>
-        {cartItems.map((cartItem) => {
-          return (
-            <CheckOutItem key={cartItem.id} cartItem={cartItem} />
-        )})}
-        {console.log(cartTotal)}
-        <span className='total'>Totale $ {cartTotal}</span>
+      <CartItemsContainer>
+        {cartItems.map((cartItem) => (
+          <CheckOutItem key={cartItem.id} cartItem={cartItem} />
+        ))}
+      </CartItemsContainer>
+      <TotalContainer>
+        <span>Totale</span>
+        <span>€ {cartTotal.toFixed(2)}</span>
+      </TotalContainer>
+      <PaymentContainer>
+        <h2>Metodo di pagamento</h2>
         <PaymentForm />
+      </PaymentContainer>
     </CheckOutContainer>  
   )
 }

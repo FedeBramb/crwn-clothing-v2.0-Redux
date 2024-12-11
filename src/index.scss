@@ -13,15 +13,20 @@
 html, body {
     height: 100%;
 }
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/src/assets/fonts/Cinzel-Regular.woff2') format('woff2'),
+    url('/src/assets/fonts/Cinzel-Regular.woff') format('woff');
+}
+
 
 
 // Riporta a 16px il font.
 body {
     margin: 0;
-    font-family: "Barlow Condensed", sans-serif;
     padding: 0;
     font-size: 1.6rem;
-    font-family: "Cinzel", serif;
+    font-family: 'Cinzel', serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;

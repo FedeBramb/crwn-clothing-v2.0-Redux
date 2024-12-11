@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const NavigationContainer =  styled.div`
   height: 12rem;
-  width: calc(100vw - 17px); // Meno la scrollbar
+  width: 100vw;
   padding: 0 10rem;
   position: fixed;
   top: 0;
@@ -13,7 +13,7 @@ export const NavigationContainer =  styled.div`
   
   &.scrolled {
     background-color: rgba(255, 255, 255, 1);
-    height: 7rem;
+    height: 6rem;
   }
 
   &.inverted-color {
@@ -34,10 +34,8 @@ export const NavLinksContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 7rem;
+  height: 6rem;
   width: 100%;
-
-  
 `
 
 export const NavLink = styled(Link)`
@@ -96,7 +94,7 @@ export const NavbarTitle = styled(Link)`
 
   &.small {
     position: fixed;
-    top: 3.8rem;
+    top: 3.3rem;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;
@@ -111,11 +109,12 @@ export const NavbarTitle = styled(Link)`
 
 export const NoImageContainer = styled.div`
   padding-top: 2rem;
+
 `
 
 // Lasciamo spazio al Nav
 export const MainContent = styled.div`
-    padding-top: 7rem;
-    padding-bottom: 5rem;
+    padding-top: 0;
     height: 100%;
+    background-color: #ffffff;
 `

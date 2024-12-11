@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
-const subColor = 'grey';
+const subColor = '#000000';
 const mainColor = '#930101';
 
 // Definisco un mixin per spostare il testo e rimpicciolirlo
 export const shrinkLabelStyles = css`
   top: -1.4rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: ${mainColor};
 `
 export const FormInputLabel = styled.label`
@@ -24,16 +24,15 @@ export const FormInputLabel = styled.label`
 
 export const Input = styled.input`
   background: none;
-  background-color: white;
   color: ${subColor};
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   padding: 1rem 1rem 1rem 0.5rem;
   display: block;
   width: 100%;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid ${subColor};
-  margin: 2.5rem 0;
+  margin: 3rem 0;
 
   &:focus {
     outline: none;
@@ -48,7 +47,8 @@ export const Input = styled.input`
 
 export const Group = styled.div`
   position: relative;
-  margin: 4.5rem 0;
+  margin: 2rem 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   input[type='password'] {
     letter-spacing: 0.3em;

@@ -15,7 +15,7 @@ export const CheckOutItemContainer = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  width: 23%;
+  width: 30%;
   padding-right: 1.5rem;
 `
 

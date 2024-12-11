@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const DirectoryContainer = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 0 1rem;
+  height: 230vh;
+  padding: 0 4rem;
+  background-color: #020202;
+  margin: auto;
   display: grid;
   grid-template-areas :
     'sneakers jackets'
@@ -21,5 +23,7 @@ export const DirectoryContainer = styled.div`
       'men'
     ;
     grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0;
   }
 `

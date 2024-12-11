@@ -17,7 +17,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <BrowserRouter>
+        <BrowserRouter
+          future={{
+            v7_relativeSplatPath: true,
+            v7_startTransition: true,
+          }}
+        >
           <Elements stripe={stripePromise}>
             <App />
           </Elements>

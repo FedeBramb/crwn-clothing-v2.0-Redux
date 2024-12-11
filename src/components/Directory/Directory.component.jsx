@@ -4,13 +4,11 @@ import DirectoryItem from "../DirectoryItem/DirectoryItem.component.jsx"
 
 import { DirectoryContainer } from './Directory.styles';
 
-
-
 const categories = [
   {
     "id": 1,
     "title": "Sneakers",
-    "imageUrl": "https://i.ibb.co/Wfh6g9W/snakers.webp",
+    "imageUrl": "https://i.ibb.co/n194yQN/snealerss.webp",
     "route": 'shop/sneakers',
     "gridArea": "sneakers"
   },

@@ -6,6 +6,7 @@ export const CategoryContainer = styled.div`
     column-gap: 2rem;
     row-gap: 5rem;
     padding: 0 2.5rem;
+    margin-bottom: 4rem;
 
     @media screen and (max-width: 1050px) {
         grid-template-columns: repeat(3, 1fr);
@@ -23,5 +24,6 @@ export const CategoryContainer = styled.div`
 export const CategoryTitle = styled.h2`
     font-size: 3.8rem;
     margin-bottom: 2.5rem;
+    margin-top: 6rem;
     text-align: center;
 `

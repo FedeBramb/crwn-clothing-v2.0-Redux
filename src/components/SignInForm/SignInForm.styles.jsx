@@ -3,10 +3,19 @@ import styled from "styled-components";
 export const SignInFormContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 38rem;
+    width: 42rem;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     
-    h1 {
+    h2 {
         color: #930101;
+    }
+
+    span {
+        font-size: 1.6rem;
     }
 
     @media screen and (max-width: 480px) {
