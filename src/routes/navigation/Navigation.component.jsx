@@ -47,7 +47,7 @@ const Navigation = () => {
       <MainContent>
         <Outlet />
       </MainContent>
-      <FooterBar backgroundColor={isHomePage ? 'white' : '#2a2a2a'} textColor={isHomePage ? '#2a2a2a' : 'white'} />
+      <FooterBar />
     </>
   );
 };

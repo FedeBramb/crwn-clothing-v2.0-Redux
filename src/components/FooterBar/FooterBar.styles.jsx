@@ -2,13 +2,22 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 5rem;
-  background-color: ${({ $backgroundColor }) => $backgroundColor};
+  background-color: #212121;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 4.2rem;
-  color: ${({ $textColor }) => $textColor};
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 100;
+
+  @media screen and (max-width: 768px) {
+    height: 10rem;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
 `;
 
 export const Logo = styled.div`
@@ -23,8 +32,7 @@ export const NavLinks = styled.nav`
 
 export const Link = styled.a`
   text-decoration: none;
-  color: ${({ $textColor }) => $textColor};
-  font-weight: 600;
+  color: white;
 
   &:hover {
     text-decoration: underline;

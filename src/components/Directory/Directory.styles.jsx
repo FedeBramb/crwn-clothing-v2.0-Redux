@@ -4,7 +4,8 @@ export const DirectoryContainer = styled.div`
   width: 100%;
   height: 230vh;
   padding: 0 4rem;
-  background-color: #020202;
+  background: rgb(205,205,205);
+  background: linear-gradient(0deg, rgba(205,205,205,1) 0%, rgba(2,2,2,1) 98%);
   margin: auto;
   display: grid;
   grid-template-areas :

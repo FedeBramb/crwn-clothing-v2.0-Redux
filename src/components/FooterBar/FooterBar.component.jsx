@@ -20,13 +20,13 @@ const FooterBar = ({ backgroundColor, textColor }) => {
       </NavLinks>
       <SocialIcons>
         <Icon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <img src={`https://icongr.am/fontawesome/facebook-official.svg?size=32&color=${textColor === 'white' ? 'ffffff' : '2a2a2a'}`} alt="icon Facebook" />
+          <img src={`https://icongr.am/fontawesome/facebook-official.svg?size=32&color=ffffff`} alt="icon Facebook" />
         </Icon>
         <Icon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <img src={`https://icongr.am/fontawesome/whatsapp.svg?size=32&color=${textColor === 'white' ? 'ffffff' : '2a2a2a'}`} alt="icon Facebook" />
+          <img src={`https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff`} alt="icon Facebook" />
         </Icon>
         <Icon href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src={`https://icongr.am/fontawesome/instagram.svg?size=32&color=${textColor === 'white' ? 'ffffff' : '2a2a2a'}`} alt="icon Facebook" />
+          <img src={`https://icongr.am/fontawesome/instagram.svg?size=32&color=ffffff`} alt="icon Facebook" />
         </Icon>
       </SocialIcons>
     </Container>
