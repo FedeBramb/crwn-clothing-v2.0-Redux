@@ -9,25 +9,40 @@ import CartIcon from '../../components/CartIcon/CartIcon.component.jsx';
 import { selectCurrentUser } from '../../store/user/user.selector.js';
 import { signOutUser } from '../../utils/firebase/firebase.utils.js';
 
-const NavLinks = ({ isScrolled, color }) => {
+const NavLinks = ({ isScrolled, isHomePage }) => {
   const currentUser = useSelector(selectCurrentUser);
   const navigate = useNavigate();
 
   return (
     <NavLinksContainer>
-      <NavLink to='/shop' className={isScrolled ? 'black' : 'white'}>
+      <NavLink 
+        $isScrolled={isScrolled} 
+        $isHomePage={isHomePage} 
+        to='/shop'
+      >
         <ShopIcon />
       </NavLink>
       {currentUser ? (
-        <NavLink className={isScrolled ? 'black' : 'white'} onClick={signOutUser}>
+        <NavLink 
+          onClick={signOutUser}
+          $isScrolled={isScrolled} 
+          $isHomePage={isHomePage} 
+        >
           <LogOutIcon />
         </NavLink>
       ) : (
-        <NavLink className={isScrolled ? 'black' : 'white'} to='/auth'>
+        <NavLink to='/auth'
+          $isScrolled={isScrolled} 
+          $isHomePage={isHomePage} 
+        >
           <LogInIcon />
         </NavLink>
       )}
-      <CartIcon isScrolled={isScrolled} />
+      <CartIcon 
+        isScrolled={isScrolled} 
+        isHomePage={isHomePage} 
+      />
+
     </NavLinksContainer>
   );
 };

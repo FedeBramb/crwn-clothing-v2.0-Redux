@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const subColor = '#000000';
+const subColor = '#292929';
 const mainColor = '#930101';
 
 // Definisco un mixin per spostare il testo e rimpicciolirlo
@@ -25,7 +25,7 @@ export const FormInputLabel = styled.label`
 export const Input = styled.input`
   background: none;
   color: ${subColor};
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   padding: 1rem 1rem 1rem 0.5rem;
   display: block;
   width: 100%;

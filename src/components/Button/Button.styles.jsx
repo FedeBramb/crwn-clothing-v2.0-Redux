@@ -63,7 +63,8 @@ export const ProductButton = styled(BaseButton)`
 
   &:hover {
     transform: scale(0.95); /* Slightly enlarges the div */
-    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+    background: rgba(255, 255, 255, 0.6); /* Slightly more opaque on hover */
+    backdrop-filter: none;
   }
 `
 

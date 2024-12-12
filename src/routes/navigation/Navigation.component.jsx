@@ -16,34 +16,38 @@ const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  console.log(isHomePage);
+  // Se inHome page && !isScrolled bianco
+  // Se inHome page && isScrolled nero
+  // se !inHomepage bianco
+  const renderNavigationContent = (isScrolled, isHomePage) => (
+    <NavigationContainer
+      $isScrolled={isScrolled}
+      $isHomePage={isHomePage}
+    >
+      <NavTitle isScrolled={isScrolled} isHomePage={isHomePage} />
+      <NavLinks isScrolled={isScrolled} isHomePage={isHomePage} />
+      {isCartOpen && <CartDropdown />}
+    </NavigationContainer>
+  );
 
   return (
     <>
       {isHomePage ? (
         <HomeImage>
           <ScrollHandler>
-            {({ isScrolled }) => (
-              <NavigationContainer className={isScrolled ? 'scrolled' : ''}>
-                <NavTitle color={'black'} isScrolled={isScrolled} />
-                <NavLinks isScrolled={isScrolled} />
-                {isCartOpen && <CartDropdown />}
-              </NavigationContainer>
-            )}
+            {({ isScrolled }) => renderNavigationContent(isScrolled, isHomePage)}
           </ScrollHandler>
         </HomeImage>
       ) : (
         <NoImageContainer>
-          <NavigationContainer className='scrolled inverted-color'>
-            <NavTitle color={'white'} isScrolled />
-            <NavLinks isScrolled={false} />
-            {isCartOpen && <CartDropdown />}
-          </NavigationContainer>
+          {renderNavigationContent(true, isHomePage)}
         </NoImageContainer>
       )}
       <MainContent>
         <Outlet />
       </MainContent>
-      <FooterBar />
+      <FooterBar backgroundColor={isHomePage ? 'white' : '#2a2a2a'} textColor={isHomePage ? '#2a2a2a' : 'white'} />
     </>
   );
 };

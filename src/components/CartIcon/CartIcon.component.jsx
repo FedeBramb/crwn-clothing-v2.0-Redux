@@ -7,18 +7,28 @@ import { setIsCartOpen } from '../../store/cart/cart.action';
 import { IconContainer, ShopBagIcon, ItemCount } from './CartIcon.styles';
 
 
-const CartIcon = ({isScrolled}) => {
+const CartIcon = ({isScrolled, isHomePage}) => {
   const dispatch = useDispatch();
 
   const cartCount = useSelector(selectCartCount);
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const toogleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
-
+  console.log(isScrolled, isHomePage)
   return (
-    <IconContainer className={isScrolled ? 'black' : 'white'}>
-        <ShopBagIcon className='shop-bag-icon' onClick={toogleIsCartOpen} />
-        <ItemCount className='item-count' onClick={toogleIsCartOpen}>{cartCount}</ItemCount>
+    <IconContainer>
+        <ShopBagIcon 
+          onClick={toogleIsCartOpen}
+          $isScrolled={isScrolled}
+          $isHomePage={isHomePage} 
+        />
+        <ItemCount 
+          onClick={toogleIsCartOpen}
+          $isScrolled={isScrolled}
+          $isHomePage={isHomePage}
+        >
+          {cartCount}
+        </ItemCount>
     </IconContainer>
   )
 }

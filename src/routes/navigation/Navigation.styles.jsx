@@ -1,24 +1,21 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const NavigationContainer =  styled.div`
+export const NavigationContainer = styled.div`
   height: 12rem;
   width: 100vw;
   padding: 0 10rem;
   position: fixed;
   top: 0;
-  background-color: transparent;
-  transition: background-color 1s ease, height 1.2s ease;
-  z-index: 100;
-  
-  &.scrolled {
-    background-color: rgba(255, 255, 255, 1);
-    height: 6rem;
-  }
-
-  &.inverted-color {
-    background-color: #2a2a2a;
-  }
+  background-color: ${({ $isScrolled, $isHomePage }) =>
+    !$isHomePage 
+    ? '#2a2a2a' 
+    : 
+    $isScrolled 
+    ? 'white' : 'transparent'};
+  height: ${({ $isScrolled }) => ($isScrolled ? '6rem' : '10rem')};
+  transition: background-color 1s ease, height 1s ease;
+  z-index: 100;  
 
   @media screen and (max-width: 1024px) {
     padding: 0 2rem;
@@ -43,15 +40,12 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   transition: color 1s ease;
   z-index: 100;
-
-  
-  &.black {
-    color: black;
-  }
-
-  &.white {
-    color: white;
-  }
+  color: ${({ $isScrolled, $isHomePage }) =>
+    !$isHomePage 
+    ? 'white' 
+    : 
+    $isScrolled 
+    ? '#2a2a2a' : 'white'};
 
   &:nth-child(2) { margin-left: auto; }
 
@@ -60,12 +54,10 @@ export const NavLink = styled(Link)`
     }
 `
 
-export const ShopLink = styled(NavLink)`
-  
-`
-
 export const NavbarTitle = styled(Link)`
-  transition: font-size 1s ease, top 1s ease, transform 1s ease, color 1s ease, letter-spacing 1s ease; /* Aggiunta la transizione del colore */
+  transition: font-size 1s ease, top 1s ease, 
+    transform 1s ease, color 1s ease, 
+    letter-spacing 1s ease; /* Aggiunta la transizione del colore */
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -77,7 +69,7 @@ export const NavbarTitle = styled(Link)`
     left: 50%;
     transform: translate(-48%, -50%);
     font-size: max(5rem, min(26rem, 16vw));
-    color: white;
+    color: ${({ $isHomePage }) => $isHomePage ? 'white' : '' };
     letter-spacing: 7rem;
 
     @media screen and (max-width: 1024px) {
@@ -98,7 +90,7 @@ export const NavbarTitle = styled(Link)`
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;
-    color: ${({ color }) => color};
+    color: ${({ $isHomePage }) => $isHomePage ? '#121212' : 'white'};
 
     @media screen and (max-width: 480px) {
       font-size: 4rem;
@@ -109,7 +101,6 @@ export const NavbarTitle = styled(Link)`
 
 export const NoImageContainer = styled.div`
   padding-top: 2rem;
-
 `
 
 // Lasciamo spazio al Nav
