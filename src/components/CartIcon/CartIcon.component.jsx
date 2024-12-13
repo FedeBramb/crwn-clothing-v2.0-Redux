@@ -17,7 +17,8 @@ const CartIcon = ({isScrolled, isHomePage}) => {
   console.log(isScrolled, isHomePage)
   return (
     <IconContainer>
-        <ShopBagIcon 
+        <ShopBagIcon
+          aria-label="Apri carrello"
           onClick={toogleIsCartOpen}
           $isScrolled={isScrolled}
           $isHomePage={isHomePage} 

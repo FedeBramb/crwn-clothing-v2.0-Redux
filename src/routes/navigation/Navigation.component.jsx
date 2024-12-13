@@ -16,7 +16,7 @@ const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-  console.log(isHomePage);
+  
   // Se inHome page && !isScrolled bianco
   // Se inHome page && isScrolled nero
   // se !inHomepage bianco

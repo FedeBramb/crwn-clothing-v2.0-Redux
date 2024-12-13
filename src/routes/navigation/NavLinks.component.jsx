@@ -20,7 +20,7 @@ const NavLinks = ({ isScrolled, isHomePage }) => {
         $isHomePage={isHomePage} 
         to='/shop'
       >
-        <ShopIcon />
+        <ShopIcon aria-label="Shop"/>
       </NavLink>
       {currentUser ? (
         <NavLink 
@@ -28,14 +28,14 @@ const NavLinks = ({ isScrolled, isHomePage }) => {
           $isScrolled={isScrolled} 
           $isHomePage={isHomePage} 
         >
-          <LogOutIcon />
+          <LogOutIcon aria-label="Log out" />
         </NavLink>
       ) : (
         <NavLink to='/auth'
           $isScrolled={isScrolled} 
           $isHomePage={isHomePage} 
         >
-          <LogInIcon />
+          <LogInIcon aria-label="Log in" />
         </NavLink>
       )}
       <CartIcon 
