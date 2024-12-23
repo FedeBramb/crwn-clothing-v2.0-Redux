@@ -11,8 +11,6 @@ import { stripePromise } from './utils/stripe/stripe.utils.js';
 
 import './index.scss';
 
-
-// Qualsiasi componente fuori da UserProvider non ha accesso al Context.
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>

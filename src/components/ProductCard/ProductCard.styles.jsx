@@ -32,15 +32,20 @@ export const ProductCardContainer = styled.div`
     display: none;
   }
 
+  & img {
+    transition: transform 0.8s ease, box-shadow 0.3s ease;
+  }
+
   &:hover {
     img {
-      opacity: 0.8;
+      opacity: 1;
+      transform: scale(0.97);
     }
 
     ${BaseButton},
     ${GoogleSignInButton},
     ${InvertedButton} {
-      opacity: 0.85;
+      opacity: 0.95;
       display: flex;
     }
   }

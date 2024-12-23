@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NavigationContainer = styled.div`
-  height: 12rem;
   width: 100vw;
   padding: 0 10rem;
-  position: fixed;
+  position: fixed !important; 
   top: 0;
   background-color: ${({ $isScrolled, $isHomePage }) =>
     !$isHomePage 
@@ -13,9 +12,9 @@ export const NavigationContainer = styled.div`
     : 
     $isScrolled 
     ? 'white' : 'transparent'};
-  height: ${({ $isScrolled }) => ($isScrolled ? '6rem' : '10rem')};
+  height: ${({ $isScrolled }) => ($isScrolled ? '7rem' : '10rem')};
   transition: background-color 1s ease, height 1s ease;
-  z-index: 100;  
+  z-index: 100; 
 
   @media screen and (max-width: 1024px) {
     padding: 0 2rem;
@@ -57,19 +56,19 @@ export const NavLink = styled(Link)`
 export const NavbarTitle = styled(Link)`
   transition: font-size 1s ease, top 1s ease, 
     transform 1s ease, color 1s ease, 
-    letter-spacing 1s ease; /* Aggiunta la transizione del colore */
+    letter-spacing 1s ease;
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  
+
   &.large {
-    position: fixed;
+    position: fixed !important;
     top: 27vh;
     left: 50%;
     transform: translate(-48%, -50%);
     font-size: max(5rem, min(26rem, 16vw));
-    color: ${({ $isHomePage }) => $isHomePage ? 'white' : '' };
+    color: ${({ $isHomePage }) => $isHomePage ? 'white' : ''};
     letter-spacing: 7rem;
 
     @media screen and (max-width: 1024px) {
@@ -85,8 +84,8 @@ export const NavbarTitle = styled(Link)`
   }
 
   &.small {
-    position: fixed;
-    top: 3.3rem;
+    position: fixed !important;
+    top: 3.65rem;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;
@@ -99,8 +98,10 @@ export const NavbarTitle = styled(Link)`
   }
 `;
 
+
+
 export const NoImageContainer = styled.div`
-  padding-top: 2rem;
+  padding-top: 6.95rem; // altezza de
 `
 
 // Lasciamo spazio al Nav

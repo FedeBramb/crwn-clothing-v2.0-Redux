@@ -3,11 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 import { thunk } from 'redux-thunk';
-
 import { legacy_createStore as createStore } from 'redux';
-// Permette di vedere lo state prima che l'azione venga eseguita.
-// import logger from 'redux-logger';
-
 import { rootReducer } from './root-reducer';
 
 

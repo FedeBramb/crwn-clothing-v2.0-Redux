@@ -11,7 +11,7 @@ import { Container,
 const FooterBar = ({ backgroundColor, textColor }) => {
   return (
     <Container $textColor={textColor} $backgroundColor={backgroundColor}>
-      <Logo>MyShop</Logo>
+      <Logo>Crwn Shop</Logo>
       <NavLinks>
         <Link $textColor={textColor} href="/about">About</Link>
         <Link $textColor={textColor} href="/contact">Contact</Link>

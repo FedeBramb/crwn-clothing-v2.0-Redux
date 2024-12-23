@@ -7,6 +7,7 @@ export const CategoryContainer = styled.div`
     row-gap: 5rem;
     padding: 0 2.5rem;
     margin-bottom: 4rem;
+    margin-top: 4.5rem;
 
     @media screen and (max-width: 1050px) {
         grid-template-columns: repeat(3, 1fr);
@@ -21,9 +22,25 @@ export const CategoryContainer = styled.div`
     }
 `
 
+export const CategoryImage = styled.div`
+    width: 100%;
+    height: 600px;
+    background-image: ${({$categoryImage}) => `url(${ $categoryImage })`};
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+`
+
 export const CategoryTitle = styled.h2`
-    font-size: 3.8rem;
-    margin-bottom: 2.5rem;
-    margin-top: 6rem;
+    font-size: 7rem;
+    margin: 2rem;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
 `
