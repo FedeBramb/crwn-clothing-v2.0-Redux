@@ -10,7 +10,7 @@ const FormInput = ({ label, ...inputProps }) => {
         <Input {...inputProps} />
         {label && (
           <FormInputLabel
-            shrink={!!inputProps.value} // shrink if there's a value
+            $shrink={!!inputProps.value} // shrink if there's a value
           >
             {label}
           </FormInputLabel>

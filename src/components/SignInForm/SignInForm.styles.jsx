@@ -6,9 +6,9 @@ export const SignInFormContainer = styled.div`
     width: 42rem;
     padding: 30px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    align-content: center;
+    justify-content: center;
+    background-color: #eeeeee;
     
     h2 {
         color: #930101;
@@ -16,10 +16,6 @@ export const SignInFormContainer = styled.div`
 
     span {
         font-size: 1.6rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        width: 30rem;
     }
 `
 export const ButtonsContainer = styled.div`

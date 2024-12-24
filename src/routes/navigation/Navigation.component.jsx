@@ -16,6 +16,7 @@ const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isAuthPage = location.pathname === '/auth';
   
   // Se inHome page && !isScrolled bianco
   // Se inHome page && isScrolled nero
@@ -47,7 +48,7 @@ const Navigation = () => {
       <MainContent>
         <Outlet />
       </MainContent>
-      <FooterBar />
+      <FooterBar isAuthPage={isAuthPage}/>
     </>
   );
 };

@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 5rem;
-  background-color: #212121;
+  background-color: ${({ $isAuthPage }) => $isAuthPage ? 'white' : '#333'};
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 4.2rem;
-  color: white;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 100;
 
@@ -23,6 +22,7 @@ export const Container = styled.div`
 export const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
+  color: ${({ $isAuthPage }) => $isAuthPage ? 'black' : 'white'};
 `;
 
 export const NavLinks = styled.nav`
@@ -32,7 +32,7 @@ export const NavLinks = styled.nav`
 
 export const Link = styled.a`
   text-decoration: none;
-  color: white;
+  color: ${({ $isAuthPage }) => $isAuthPage ? 'black' : 'white'};
 
   &:hover {
     text-decoration: underline;
@@ -46,7 +46,6 @@ export const SocialIcons = styled.div`
 `;
 
 export const Icon = styled.a`
-  color: #fff;
   font-size: 1.2rem;
 
   &:hover {
