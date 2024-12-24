@@ -202,8 +202,8 @@ button.ghost {
     .mobile-toggle {
         display: flex;
         position: fixed;
-        right: -100px;
-        top: 50%;
+        right: -140px;
+        top: 40%;
         transform: translateY(-50%) rotate(90deg);
         transform-origin: left center;
         background-color: #343434;
@@ -218,7 +218,7 @@ button.ghost {
         text-orientation: mixed;
         align-items: center;
         justify-content: center;
-        width: 120px;
+        width: 150px;
         height: 40px;
         border-radius: 0 0 20px 20px;
     }
@@ -226,11 +226,11 @@ button.ghost {
     .mobile-toggle span {
         transform: rotate(-90deg);
         writing-mode: vertical-rl; /* Scrittura verticale da destra a sinistra */
-    text-orientation: upright; /* Orienta ogni carattere in verticale */
+        text-orientation: upright; /* Orienta ogni carattere in verticale */
     }
 
     .container.right-panel-active .mobile-toggle {
-        right: -100px;
+        right: -140px;
         transform: translateY(-50%) rotate(90deg);
     }
 

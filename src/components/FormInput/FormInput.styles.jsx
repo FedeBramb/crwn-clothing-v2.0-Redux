@@ -1,13 +1,15 @@
 import styled, { css } from "styled-components";
 
 const subColor = '#292929';
-const mainColor = '#930101';
+const mainColor = '#00949c;';
 
 // Definisco un mixin per spostare il testo e rimpicciolirlo
 export const shrinkLabelStyles = css`
-  top: -1.4rem;
+  top: -1.7rem;
   font-size: 1.4rem;
   color: ${mainColor};
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
 `
 export const FormInputLabel = styled.label`
   color: ${subColor};
@@ -18,19 +20,20 @@ export const FormInputLabel = styled.label`
   left: 0.5rem;
   top: 1rem;
   transition: 300ms ease all;
+  
 
   ${({ $shrink }) => $shrink && shrinkLabelStyles};
 `;
 
 export const Input = styled.input`
-  background: none;
+  background: #8da1ae67;
   color: ${subColor};
   font-size: 1.6rem;
   padding: 1rem 1rem 1rem 0.5rem;
   display: block;
   width: 100%;
   border: none;
-  border-radius: 0;
+  border-radius: 10px;
   border-bottom: 1px solid ${subColor};
   margin: 3rem 0;
 

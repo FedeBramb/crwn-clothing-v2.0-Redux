@@ -77,7 +77,7 @@ export const NavbarTitle = styled(Link)`
 
     @media screen and (max-width: 480px) {
       font-size: 9rem;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -100%);
       top: 20vh;
       letter-spacing: 0;
     }

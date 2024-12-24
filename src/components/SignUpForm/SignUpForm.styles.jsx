@@ -11,12 +11,15 @@ export const SignUpContainer = styled.div`
     align-content: center;
     justify-content: center;
 
-    h2 {
-        color: #9a0707;
+    h1 {
+        color: #00949c;
+        letter-spacing: -0.2rem;
         margin-top: 2%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     span {
         font-size: 1.6rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 `

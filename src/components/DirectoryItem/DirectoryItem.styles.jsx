@@ -48,6 +48,7 @@ export const Explore = styled.span`
 
 export const Title = styled.div`
   font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
 export const DirectoryItemContainer = styled.div`

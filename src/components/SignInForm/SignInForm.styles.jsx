@@ -10,22 +10,18 @@ export const SignInFormContainer = styled.div`
     justify-content: center;
     background-color: #eeeeee;
     
-    h2 {
-        color: #930101;
+    h1 {
+        color: #00949c;
+        letter-spacing: -0.2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     span {
         font-size: 1.6rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 `
 export const ButtonsContainer = styled.div`
     display: flex;
     justify-content: space-between;
-
-    @media screen and (max-width: 480px) {
-        .no-display {
-            display: none;
-        }
-    }
-    
 `
