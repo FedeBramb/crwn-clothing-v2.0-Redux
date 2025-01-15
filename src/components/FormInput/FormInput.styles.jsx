@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const subColor = '#292929';
-const mainColor = '#00949c;';
+const mainColor = '#dba400;';
 
 // Definisco un mixin per spostare il testo e rimpicciolirlo
 export const shrinkLabelStyles = css`
@@ -9,7 +9,6 @@ export const shrinkLabelStyles = css`
   font-size: 1.4rem;
   color: ${mainColor};
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
 `
 export const FormInputLabel = styled.label`
   color: ${subColor};

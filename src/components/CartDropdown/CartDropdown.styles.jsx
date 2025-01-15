@@ -18,7 +18,7 @@ export const CartDropdownContainer = styled.div`
   border-radius: 5px;
   top: 7rem;
   right: 11rem;
-  z-index: 5;
+  z-index: 200;
 
   ${BaseButton},
   ${GoogleSignInButton},
@@ -43,5 +43,6 @@ export const CartItemsContainer = styled.div`
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
+  z-index: 200;
 `
 

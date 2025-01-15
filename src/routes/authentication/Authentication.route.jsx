@@ -16,7 +16,7 @@ const Authentication = () => {
     <>
       <ScrollingBar />
       <div className="body">
-        <div className={`container ${isSignUp ? 'right-panel-active' : ''}`} id="container" ref={containerRef}>
+        <div className={`container ${isSignUp ? 'right-panel-active' : ''}`} ref={containerRef}>
           <div className="form-container sign-up-container">
             <SignUpForm />
           </div>

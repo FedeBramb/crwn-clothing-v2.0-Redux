@@ -7,15 +7,21 @@ import ScrollingBar from './ScrollingBar/ScrollingBar.component.jsx';
 import ProductCard from '../../components/ProductCard/ProductCard.component.jsx';
 import Spinner from '../../components/Spinner/Spinner.component.jsx';
 
+import Sneakers from '../../assets/categories-images/Shoes-category.webp';
+import Jackets from '../../assets/categories-images/Category-jackets.webp';
+import Hats from '../../assets/categories-images/Category-hats.webp';
+import Womens from '../../assets/categories-images/Category-woman.webp';
+import Mens from '../../assets/categories-images/Category-man.webp';
+
 import { selectCategoriesMap, selectCategoriesIsLoading } from '../../store/categories/categories.selector.js';
 import { CategoryContainer, CategoryTitle, CategoryImage } from './Category.styles.jsx';
 
 const categoryImages = {
-  sneakers: 'https://i.ibb.co/T8cKv5S/Shoes-cateogery.webp',
-  jackets: 'https://i.ibb.co/nMZ5Sv5/Category-jackets.webp',
-  hats: 'https://i.ibb.co/GMy0Ldh/Category-hats.webp',
-  womens: 'https://i.ibb.co/ZKdrLnF/Category-woman.webp',
-  mens: 'https://i.ibb.co/h859mVp/Category-man.webp'
+  sneakers: Sneakers,
+  jackets: Jackets,
+  hats: Hats,
+  womens: Womens,
+  mens: Mens
 }
 
 // Utilizza useEffect così da renderizzare ogni volta che la category
@@ -28,7 +34,6 @@ const Category = () => {
   const [products, setProducts] = useState(categoriesMap[category]);
   
   useEffect(() => {
-    console.log('categoriesMap:', categoriesMap);
       setProducts(categoriesMap[category]);
     }, [category, categoriesMap]);
 

@@ -207,7 +207,7 @@ button.ghost {
         transform: translateY(-50%) rotate(90deg);
         transform-origin: left center;
         background-color: #343434;
-        color: #ffffff;
+        color: #ffbf00;
         border: none;
         padding: 10px 20px;
         font-size: 16px;

@@ -12,7 +12,7 @@ export const SignUpContainer = styled.div`
     justify-content: center;
 
     h1 {
-        color: #00949c;
+        color: #cb9800;
         letter-spacing: -0.2rem;
         margin-top: 2%;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);

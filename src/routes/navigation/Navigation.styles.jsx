@@ -62,6 +62,7 @@ export const NavbarTitle = styled(Link)`
   font-weight: 400;
   font-style: normal;
 
+
   &.large {
     position: fixed !important;
     top: 27vh;
