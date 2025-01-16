@@ -11,6 +11,10 @@ export const SignUpContainer = styled.div`
     align-content: center;
     justify-content: center;
 
+    @media (max-width: 768px) {
+        background-color: transparent;
+    }
+
     h1 {
         color: #cb9800;
         letter-spacing: -0.2rem;

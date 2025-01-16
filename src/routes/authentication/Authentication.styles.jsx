@@ -20,13 +20,40 @@ export const Container = styled.div`
 
   &.right-panel-active .sign-in-container {
     transform: translateX(100%);
+    
+    @media (max-width: 768px) {
+      transform: translateX(-100%);
+    }
   }
 
   &.right-panel-active .sign-up-container {
-      transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+
+    @media (max-width: 768px) {
+      transform: translateX(0);
       opacity: 1;
       z-index: 5;
-      animation: show 0.6s;
+      animation: none;
+    }
+  }
+
+  &.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+  }
+
+  &.right-panel-active .overlay {
+    transform: translateX(50%);
+  }
+
+  &.right-panel-active .overlay-left {
+    transform: translateX(0);
+  }
+  
+  &.right-panel-active .overlay-right {
+    transform: translateX(20%);
   }
 
   @keyframes show {
@@ -42,7 +69,12 @@ export const Container = styled.div`
           z-index: 5;
       }
   }
-  
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
 `;
 
 export const FormContainer = styled.div`
@@ -58,12 +90,29 @@ export const SignUpContainer = styled(FormContainer)`
   width: 50%;
   opacity: 0;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    transform: translateX(100%);
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+  }
 `;
 
 export const SignInContainer = styled(FormContainer)`
   left: 0;
   width: 50%;
   z-index: 2;
+  
+  @media (max-width: 768px) {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+  }
 `;
 
 export const OverlayContainer = styled.div`
@@ -75,12 +124,14 @@ export const OverlayContainer = styled.div`
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
   z-index: 100;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Overlay = styled.div`
-  background: #FF416C;
-  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  background-image: url("https://i.ibb.co/5LnNwVN/Authram.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -132,8 +183,8 @@ export const Paragraph = styled.p`
 
 export const GhostButton = styled.button`
   border-radius: 20px;
-  border: 1px solid #FF4B2B;
   background-color: transparent;
+  border-color: #ffffff;
   color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
@@ -154,12 +205,37 @@ export const GhostButton = styled.button`
 
 export const MobileToggle = styled(GhostButton)`
   display: none;
+
   @media (max-width: 768px) {
-    display: block;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FF4B2B;
-    color: #FFFFFF;
+    display: flex;
+    position: fixed;
+    right: -140px;
+    top: 40%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: left center;
+    background-color: #343434;
+    color: #ffbf00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    text-orientation: mixed;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 0 0 20px 20px;
+
+    &:active {
+      transform: translateY(-50%) rotate(90deg); /* Mantiene la rotazione */
+    }
+
+    & span {
+      transform: rotate(-90deg);
+      writing-mode: vertical-rl; /* Scrittura verticale da destra a sinistra */
+      text-orientation: upright; /* Orienta ogni carattere in verticale */
+    }
   }
 `;

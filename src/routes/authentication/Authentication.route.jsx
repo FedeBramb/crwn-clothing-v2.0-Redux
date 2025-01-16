@@ -1,8 +1,27 @@
 import React, { useState, useRef } from 'react';
+
 import ScrollingBar from '../Category/ScrollingBar/ScrollingBar.component';
 import SignInForm from '../../components/SignInForm/SignInForm.component';
 import SignUpForm from '../../components/SignUpForm/SignUpForm.component';
-import './Authentication.styles.css';
+
+import {
+  Body,
+  Container,
+  FormContainer,
+  SignUpContainer,
+  SignInContainer,
+  OverlayContainer,
+  Overlay,
+  OverlayPanel,
+  OverlayLeft,
+  OverlayRight,
+  Title,
+  Paragraph,
+  GhostButton,
+  MobileToggle,
+} from './Authentication.styles.jsx';
+
+
 
 const Authentication = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -15,37 +34,41 @@ const Authentication = () => {
   return (
     <>
       <ScrollingBar />
-      <div className="body">
-        <div className={`container ${isSignUp ? 'right-panel-active' : ''}`} ref={containerRef}>
-          <div className="form-container sign-up-container">
+      <Body>
+        <Container className={isSignUp ? 'right-panel-active' : ''} ref={containerRef}>
+          <SignUpContainer className="sign-up-container">
             <SignUpForm />
-          </div>
-          <div className="form-container sign-in-container">
+          </SignUpContainer>
+          <SignInContainer className="sign-in-container">
             <SignInForm />
-          </div>
-          <div className="overlay-container">
-            <div className="overlay">
-              <div className="overlay-panel overlay-left">
-                <h1>Bentornato!</h1>
-                <p>
+          </SignInContainer>
+          <OverlayContainer className="overlay-container">
+            <Overlay className="overlay">
+              <OverlayLeft className="overlay-left">
+                <Title>Bentornato!</Title>
+                <Paragraph>
                   Per restare connesso con noi, effettua il login con i tuoi dati personali
-                </p>
-                <button className="ghost" id="signIn" onClick={toggleForm}>Sign In</button>
-              </div>
-              <div className="overlay-panel overlay-right">
-                <h1>Benvenuto!</h1>
-                <p>
+                </Paragraph>
+                <GhostButton id="signIn" onClick={toggleForm}>
+                  Sign In
+                </GhostButton>
+              </OverlayLeft>
+              <OverlayRight className="overlay-right">
+                <Title>Benvenuto!</Title>
+                <Paragraph>
                   Per restare connesso con noi, effettua la registrazione con i tuoi dati personali
-                </p>
-                <button className="ghost" id="signUp" onClick={toggleForm}>Sign Up</button>
-              </div>
-            </div>
-          </div>
-          <button className="mobile-toggle" onClick={toggleForm}>
+                </Paragraph>
+                <GhostButton id="signUp" onClick={toggleForm}>
+                  Sign Up
+                </GhostButton>
+              </OverlayRight>
+            </Overlay>
+          </OverlayContainer>
+          <MobileToggle className="mobile-toggle" onClick={toggleForm}>
             <span>{isSignUp ? 'Login' : 'SignUp'}</span>
-          </button>
-        </div>
-      </div>
+          </MobileToggle>
+        </Container>
+      </Body>
     </>
   );
 };

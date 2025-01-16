@@ -30,6 +30,9 @@ export const CategoryImage = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 `
 
 export const CategoryTitle = styled.h2`
@@ -38,8 +41,6 @@ export const CategoryTitle = styled.h2`
     text-align: center;
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 100;

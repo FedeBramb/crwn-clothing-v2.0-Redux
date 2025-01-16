@@ -1,5 +1,7 @@
-.container-home {
-    background-image: url('../../assets/home-image.webp');
+import styled from 'styled-components';
+
+export const Container = styled.div`
+    background-image: url(${props => props.$backgroundImage});
     width: calc(100vw - 17px); // - scrollbar
     height: 150vh;
     padding-top: 2rem;
@@ -14,4 +16,4 @@
         width: 100vw;
         background-position: 40% center;
     }
-}
+`

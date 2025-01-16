@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ScrollingBar.styles.css';
+
+import {
+  Container,
+  Body,
+  ScrollItem,
+} from './ScrollingBar.styles.jsx';
 
 const ScrollingBar = () => {
   const messages = [
@@ -19,19 +24,19 @@ const ScrollingBar = () => {
   }, []);
 
   return (
-    <div className="scrolling-bar" role="marquee">
-      <div className="scrolling-bar-container">
+    <Container role="marquee">
+      <Body className="scrolling-bar-container">
         {messages.map((message, index) => (
-          <div
+          <ScrollItem
             key={index}
             className={`scrolling-bar-item ${index === activeIndex ? 'active' : ''}`}
             aria-hidden={index !== activeIndex}
           >
             {message}
-          </div>
+          </ScrollItem>
         ))}
-      </div>
-    </div>
+      </Body>
+    </Container>
   );
 };
 
