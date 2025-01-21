@@ -11,7 +11,8 @@ import Home from './routes/home/Home.jsx';
 import Authentication from './routes/authentication/Authentication.route.jsx';
 import Shop from './routes/shop/Shop.route.jsx';
 import CheckOut from './routes/CheckOut/CheckOut.route.jsx';
-import { setCurrentUser } from './store/user/user.action.js'
+import { setCurrentUser } from './store/user/user.action.js';
+import Toast from './components/Toast/Toast.component.jsx';
 
 import './App.css'
 
@@ -44,6 +45,7 @@ function App() {
           <Route path='checkout' element={ <CheckOut />} />
         </Route>
       </Routes>
+      <Toast />
     </>
   )
 }

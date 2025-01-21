@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 
 import FormInput from '../FormInput/FormInput.component.jsx';
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button.component.jsx';
-import Toast from '../Toast/Toast.component.jsx';
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils.js';
 
@@ -46,8 +45,10 @@ const SignUpForm = () => {
 
   const handleSubmit = async (event) => {
       event.preventDefault();
+      console.log('handleSubmit fuori tutto');
   
       if (password !== confirmPassword) {
+        console.log('handleSubmit in passerratat');
         handleToast('error', '❌ Passwords non coincidono');
         return; 
       }
@@ -59,6 +60,7 @@ const SignUpForm = () => {
         );
   
         await createUserDocumentFromAuth(user, { displayName });
+        console.log('handleSubmit invocato in try');
         handleToast('success', '✅ Account creato con successo');
         resetFormFields();
         setTimeout(() => navigate('/'), 2000);
@@ -109,7 +111,6 @@ const SignUpForm = () => {
                 />
                 <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type='submit'>Invia</Button>
             </form>
-            <Toast />
         </SignUpContainer>
   )
 }
