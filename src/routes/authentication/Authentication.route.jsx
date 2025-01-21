@@ -7,12 +7,10 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm.component';
 import {
   Body,
   Container,
-  FormContainer,
   SignUpContainer,
   SignInContainer,
   OverlayContainer,
   Overlay,
-  OverlayPanel,
   OverlayLeft,
   OverlayRight,
   Title,

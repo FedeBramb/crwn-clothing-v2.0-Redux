@@ -43,6 +43,6 @@ export const CartItemsContainer = styled.div`
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
-  z-index: 200;
+  z-index: 100;
 `
 

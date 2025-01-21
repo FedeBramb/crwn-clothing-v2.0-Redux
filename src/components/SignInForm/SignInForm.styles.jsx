@@ -11,7 +11,7 @@ export const SignInFormContainer = styled.div`
     background-color: #eeeeee;
     
     h1 {
-        color: #cb9800;
+        color: #0f6bc1;
         letter-spacing: -0.2rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }

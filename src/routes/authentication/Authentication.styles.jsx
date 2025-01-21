@@ -123,7 +123,6 @@ export const OverlayContainer = styled.div`
   height: 100%;
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
-  z-index: 100;
 
   @media (max-width: 768px) {
     display: none;
@@ -220,7 +219,7 @@ export const MobileToggle = styled(GhostButton)`
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    z-index: 1000;
+    z-index: 101;
     text-orientation: mixed;
     align-items: center;
     justify-content: center;

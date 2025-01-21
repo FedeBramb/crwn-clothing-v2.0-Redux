@@ -1,8 +1,10 @@
 import {  useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import FormInput from '../FormInput/FormInput.component.jsx';
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button.component.jsx';
+import Toast from '../Toast/Toast.component.jsx';
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils.js';
 
@@ -18,49 +20,55 @@ const defaultFormFields = {
 }
 
 const SignUpForm = () => {
-    const [ formFields, setFormFields ] = useState(defaultFormFields);
-    const { displayName, email, password, confirmPassword } = formFields;
-    const navigate = useNavigate();
+  const [ formFields, setFormFields ] = useState(defaultFormFields);
+  const { displayName, email, password, confirmPassword } = formFields;
+  const navigate = useNavigate();
 
-    const resetFormFields = () => {
-        setFormFields(defaultFormFields);
+  // Spread operator così da aggiungere la rispettiva proprietà e valore a formField
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    // [name] perchè la prorietà è una stringa.
+    setFormFields({...formFields, [name]: value});
+  }
+
+  const resetFormFields = () => {
+      setFormFields(defaultFormFields);
+  }
+
+  // Funzione per gestire i toast
+  const handleToast = (type, message) => {
+    if (type === 'success') {
+        toast.success(message);
+    } else {
+        toast.error(message || '❌ Errore durante il login'); 
     }
+  };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-    
-        if (password !== confirmPassword) {
-          alert('passwords do not match');
-          return;
-        }
-        
-        try {
-          const { user } = await createAuthUserWithEmailAndPassword(
-            email,
-            password
-          );
-    
-          await createUserDocumentFromAuth(user, { displayName });
-          resetFormFields();
-          navigate('/');
-        } catch (error) {
-          if (error.code === 'auth/email-already-in-use') {
-            alert('Cannot create user, email already in use');
-          } else {
-            console.log('user creation encountered an error', error);
-          }
-        }
-    };
-
-    // Target permettere di recuperare tutti i dettagli legati all'input
-    // Settiamo lo state
-    // Spread operator così da aggiungere la rispettiva proprietà e valore a formField
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        // [name] perchè la prorietà è una stringa.
-        setFormFields({...formFields, [name]: value});
-    }
-
+  const handleSubmit = async (event) => {
+      event.preventDefault();
+  
+      if (password !== confirmPassword) {
+        handleToast('error', '❌ Passwords non coincidono');
+        return; 
+      }
+      
+      try {
+        const { user } = await createAuthUserWithEmailAndPassword(
+          email,
+          password
+        );
+  
+        await createUserDocumentFromAuth(user, { displayName });
+        handleToast('success', '✅ Account creato con successo');
+        resetFormFields();
+        setTimeout(() => navigate('/'), 2000);
+      } catch (error) {
+        if (error.code === 'auth/email-already-in-use') {
+          return handleToast('error', '❌ Email già in uso');
+        } else {
+          return handleToast('error', '❌ Errore nella creazione account');          }
+      }
+  };
 
     return (
         <SignUpContainer>
@@ -101,6 +109,7 @@ const SignUpForm = () => {
                 />
                 <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type='submit'>Invia</Button>
             </form>
+            <Toast />
         </SignUpContainer>
   )
 }

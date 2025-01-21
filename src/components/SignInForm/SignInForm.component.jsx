@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import FormInput from '../FormInput/FormInput.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button.component';
+import Toast from '../Toast/Toast.component';
 
 import { SignInFormContainer, ButtonsContainer} from './SignInForm.styles';
 
@@ -26,37 +28,40 @@ const SignInForm = () => {
         setFormFields(defaultFormFields)
     }
 
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormFields({...formFields, [name]: value})
+    }
+    
+    // Log in con Google
+    const signInWithGoogle = async () => {
+        await signInWithGooglePopup();
+        navigate('/');
+    }
+
+    // Funzione per gestire i toast
+    const handleToast = (type) => {
+        if (type === 'success') {
+            toast.success('✅ Login effettato con successo');
+        } else {
+            toast.error('❌ Credenziali errate!'); 
+        }
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             const userCredential = await signInAuthWithEmailAndPassword(email, password);
             const user = userCredential.user;
             resetFormFields();
-            navigate('/');
-          } catch (error) {
-            switch(error.code) {
-                case 'auth/wrong-password':
-                    alert('Password non corretta');
-                    break;
-                case 'auth/user-not-found':
-                    alert('no user associated with this email');
-                    break;
-            }
-            console.log(error);
-          }
+            handleToast('success');
+            setTimeout(() => navigate('/'), 2000);
+        } catch (error) {
+            console.log("Errore ricevuto:", error);
+            handleToast('error');
+        }
     }
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormFields({...formFields, [name]: value})
-    }
-    
-    const signInWithGoogle = async () => {
-        await signInWithGooglePopup();
-        navigate('/');
-    }
-
-    
   return (
     <SignInFormContainer>
         <form onSubmit={handleSubmit}>
@@ -94,6 +99,7 @@ const SignInForm = () => {
                 </Button>
             </ButtonsContainer>
         </form>
+        <Toast />
     </SignInFormContainer>
   )
 }
