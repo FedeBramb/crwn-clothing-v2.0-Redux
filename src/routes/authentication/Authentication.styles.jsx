@@ -170,6 +170,9 @@ export const OverlayRight = styled(OverlayPanel)`
 export const Title = styled.h1`
   font-weight: bold;
   margin: 0;
+  &::first-letter {
+    font-size: 4.5rem;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -178,6 +181,10 @@ export const Paragraph = styled.p`
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
+  
+  &::first-letter {
+    font-weight: bold;
+  }
 `;
 
 export const GhostButton = styled.button`

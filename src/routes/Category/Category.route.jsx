@@ -14,7 +14,7 @@ import Womens from '../../assets/categories-images/Category-woman.webp';
 import Mens from '../../assets/categories-images/Category-man.webp';
 
 import { selectCategoriesMap, selectCategoriesIsLoading } from '../../store/categories/categories.selector.js';
-import { CategoryContainer, CategoryTitle, CategoryImage } from './Category.styles.jsx';
+import { CategoryContainer, CategoryTitle, CategoryImage } from './category.styles.jsx';
 
 const categoryImages = {
   sneakers: Sneakers,

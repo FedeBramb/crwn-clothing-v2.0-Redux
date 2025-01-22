@@ -33,7 +33,7 @@ const CheckOut = () => {
       </CartItemsContainer>
       <TotalContainer>
         <span>Totale</span>
-        <span>€ {cartTotal.toFixed(2)}</span>
+        <span>$ {cartTotal.toFixed(2)}</span>
       </TotalContainer>
       <PaymentContainer>
         <h2>Metodo di pagamento</h2>

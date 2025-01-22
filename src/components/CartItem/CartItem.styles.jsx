@@ -5,15 +5,20 @@ export const ItemContainer = styled.div`
   display: flex;
   height: 80rem;
   margin-bottom: 1.5rem;
-  max-height: 150px;
+  max-height: 15rem;
+  min-height: 15rem;
 `
 
 export const ItemImg = styled.img`
-  width: 30%;
+  background-image: ${({ $imageUrl }) => `url(${ $imageUrl })`};
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 60%;
 `
 
 export const ItemDetails = styled.div`
-  width: 70%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

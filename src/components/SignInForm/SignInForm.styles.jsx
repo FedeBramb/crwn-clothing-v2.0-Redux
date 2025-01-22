@@ -14,11 +14,16 @@ export const SignInFormContainer = styled.div`
         color: #0f6bc1;
         letter-spacing: -0.2rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        
+        &::first-letter {
+            font-size: 4rem;
+        }
     }
 
     span {
         font-size: 1.6rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        color: #575757;
     }
 `
 export const ButtonsContainer = styled.div`

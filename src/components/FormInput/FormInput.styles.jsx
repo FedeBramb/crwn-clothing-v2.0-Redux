@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const subColor = '#292929';
+const subColor = '#61656b';
 const mainColor = '#0f6bc1';
 
 // Definisco un mixin per spostare il testo e rimpicciolirlo
@@ -33,7 +33,7 @@ export const Input = styled.input`
   width: 100%;
   border: none;
   border-radius: 10px;
-  border-bottom: 1px solid ${subColor};
+  border-bottom: 1px solid ${mainColor};
   margin: 3rem 0;
 
   &:focus {

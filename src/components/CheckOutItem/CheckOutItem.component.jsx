@@ -7,7 +7,6 @@ import { addItemToCart, clearItemFromCart, removeItemFromCart } from '../../stor
 import { 
   CheckOutItemContainer, 
   ImageContainer, 
-  Img, 
   Name, 
   QuantityContainer, 
   Price, 
@@ -27,9 +26,7 @@ const CheckOutItem = ({cartItem}) => {
 
   return (
     <CheckOutItemContainer>
-        <ImageContainer>
-            <Img src={imageUrl} alt={`${name}`} />
-        </ImageContainer>
+        <ImageContainer $imageUrl={imageUrl} />
         <Name> {name} </Name>
         <QuantityContainer>
             <ArrowContainer onClick={removeItemHandler}>&#10094;</ArrowContainer>

@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { fetchCategoriesStartAsync } from '../../store/categories/categories.action';
+import { fetchCategoriesStartAsync } from '../../store/categories/categories.action.js';
 
-import CategoriesPreview from '../Categories-Preview/Categories-Preview.route';
-import Category from '../Category/Category.route.jsx';
+import CategoriesPreview from '../categories-Preview/categories-Preview.route.jsx';
+import Category from '../Category/category.route.jsx';
 
 const Shop = () => {
   const dispatch = useDispatch();

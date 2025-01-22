@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import { addItemToCart } from '../../store/cart/cart.action.js';
 import { selectCartItems } from '../../store/cart/cart.selector.js';
@@ -12,7 +13,10 @@ const ProductCard = ({ product }) => {
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
 
-  const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
+  const addProductToCart = () => {
+    dispatch(addItemToCart(cartItems, product));
+    toast.success(`🛒 ${name} added to cart`);
+  }
 
   return (
     <ProductCardContainer>

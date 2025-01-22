@@ -8,6 +8,7 @@ export const CheckOutContainer = styled.div`
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
 
   h1 {
     font-size: 2.5rem;
@@ -28,7 +29,7 @@ export const CheckOutHeader = styled.div`
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 2rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 876px) {
     display: none;
   }
 `;

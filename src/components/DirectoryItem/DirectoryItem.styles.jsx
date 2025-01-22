@@ -36,6 +36,10 @@ export const ExploreSelectionDiv = styled.div`
   font-weight: 600;
   transition: transform 0.3s ease;
   
+  &:hover {
+    transform: scale(0.95);
+  }
+
 `
 
 export const Explore = styled.span`
@@ -49,6 +53,10 @@ export const Explore = styled.span`
 export const Title = styled.div`
   font-size: 3.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  &::first-letter {
+    font-size: 5rem;
+  }
 `
 
 export const DirectoryItemContainer = styled.div`
