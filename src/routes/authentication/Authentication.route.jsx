@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-import ScrollingBar from '../Category/ScrollingBar/ScrollingBar.component';
+import ScrollingBar from '../category/ScrollingBar/ScrollingBar.component.jsx';
 import SignInForm from '../../components/SignInForm/SignInForm.component';
 import SignUpForm from '../../components/SignUpForm/SignUpForm.component';
 
