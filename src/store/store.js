@@ -7,11 +7,13 @@ import { legacy_createStore as createStore } from 'redux';
 import { rootReducer } from './root-reducer';
 
 
+// Permette di vedere il flusso di azione che vengono dispatch
 const middleWares = [
     process.env.NODE_ENV === 'development' && logger,
     thunk,
 ].filter(Boolean);
-  
+
+// Permette di utilizzare più middlewares
 const composeEnhancer =
     (process.env.NODE_ENV !== 'production' &&
       window &&

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { selectCartItems, selectIsCartOpen } from '../../store/cart/cart.selector.js';
 import { setIsCartOpen } from '../../store/cart/cart.action';
@@ -19,21 +19,14 @@ const CartDropdown = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const toogleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
   const goToCheckOutHandler = () => {
     navigate('/checkout');
-    toogleIsCartOpen();  // Close the cart when going to checkout
-  }
-
-  // Strict mode disattivato, altrimenti forza la pulizia
-  useEffect(() => {
-    // Chiude carrello quando cambia route
-    return () => {
-      toogleIsCartOpen();
-    }
-  }, [dispatch, navigate]);
+    if (isCartOpen) toogleIsCartOpen(); // Chiudi solo se è aperto
+  };
 
   return (
     <CartDropdownContainer>

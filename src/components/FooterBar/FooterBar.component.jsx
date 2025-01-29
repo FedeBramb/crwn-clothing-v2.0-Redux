@@ -9,7 +9,6 @@ import { Container,
 } from './FooterBar.styles';
 
 const FooterBar = ({ isAuthPage }) => {
-  console.log(isAuthPage)
   return (
     
     <Container $isAuthPage={isAuthPage}>

@@ -6,11 +6,11 @@ import { Routes, Route } from 'react-router-dom';
 import { onAuthStateChangedListener, createUserDocumentFromAuth } from './utils/firebase/firebase.utils.js';
 
 import GoToTop from './components/GoToTop/GoToTop.component.jsx';
-import Navigation from './routes/navigation/Navigation.component.jsx';
+import Navigation from './routes/navigation/Navigation.route.jsx';
 import Home from './routes/home/Home.jsx';
 import Authentication from './routes/authentication/Authentication.route.jsx';
 import Shop from './routes/shop/shop.route.jsx'; 
-import CheckOut from './routes/CheckOut/CheckOut.route.jsx';
+import CheckOut from './routes/checkOut/CheckOut.route.jsx';
 import { setCurrentUser } from './store/user/user.action.js';
 import Toast from './components/Toast/Toast.component.jsx';
 

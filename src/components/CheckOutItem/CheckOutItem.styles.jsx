@@ -15,11 +15,11 @@ export const CheckOutItemContainer = styled.div`
   @media screen and (max-width: 876px) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-      "nome nome"
-      "image details"
-      "image details"
-      "image details"
-      "image details";
+      "name name"
+      "image quantity"
+      "image price"
+      "image price"
+      "image remove";
     grid-row-gap: 3rem;
   }
 
@@ -45,8 +45,9 @@ export const ImageContainer = styled.div`
 
 export const Name = styled.span`
   width: 100%;
-  grid-area: nome;
+  grid-area: name;
   font-weight: bold;
+
   @media screen and (max-width: 480px) {
     width: 100%;
   }
@@ -55,6 +56,7 @@ export const Name = styled.span`
 export const QuantityContainer = styled.div`
   width: 100%;
   display: flex;
+  grid-area: quantity;
   
   @media screen and (max-width: 480px) {
     width: 120px;
@@ -63,6 +65,7 @@ export const QuantityContainer = styled.div`
 
 export const Price = styled.span`
   width: 100%;
+  grid-area: price;
   
   @media screen and (max-width: 480px) {
     width: 120px;
@@ -81,6 +84,7 @@ export const RemoveIcon = styled.div`
   padding-left: 1.2rem;
   cursor: pointer;
   color: red;
+  grid-area: remove;
   
   @media screen and (max-width: 480px) {
     width: 120px;

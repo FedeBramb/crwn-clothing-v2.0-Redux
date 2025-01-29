@@ -10,7 +10,7 @@ import {
   CartItemsContainer,
   TotalContainer,
   PaymentContainer
-} from './CheckOut.styles';
+} from './CheckOut.styles.jsx';
 
 const CheckOut = () => {
   const cartItems = useSelector(selectCartItems);

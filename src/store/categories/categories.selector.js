@@ -3,7 +3,7 @@ import { createSelector } from "reselect";
 // Utiliziamo un selettore
 const selectCategoryReducer = (state) => state.categories;
 
-/* [] input selectors, () outpu selectors
+/* [] input selectors, () output selectors
  * se l'input è sempre lo stesso non riaggiorna evitando rerender
  * si occupa solo di estrarre i dati dallo stato */
 export const selectCategories = createSelector(
