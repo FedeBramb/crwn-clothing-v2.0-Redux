@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { selectCartItems, selectIsCartOpen } from '../../store/cart/cart.selector.js';
 import { setIsCartOpen } from '../../store/cart/cart.action';
@@ -19,13 +19,13 @@ const CartDropdown = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const toogleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
+  // Chiude il carrello al click sul pulsante checkout
   const goToCheckOutHandler = () => {
     navigate('/checkout');
-    if (isCartOpen) toogleIsCartOpen(); // Chiudi solo se è aperto
+    if (isCartOpen) toogleIsCartOpen(); 
   };
 
   return (

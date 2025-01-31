@@ -5,12 +5,12 @@ import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart, clearItemFromCart, removeItemFromCart } from '../../store/cart/cart.action';
 
 import { 
-  CheckOutItemContainer, 
-  ImageContainer, 
+  Container, 
+  Image, 
   Name, 
-  QuantityContainer, 
+  Quantity, 
   Price, 
-  ArrowContainer, 
+  Arrow, 
   Value, 
   RemoveIcon
 } from './CheckOutItem.styles';
@@ -25,17 +25,17 @@ const CheckOutItem = ({cartItem}) => {
     const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, cartItem));
 
   return (
-    <CheckOutItemContainer>
-        <ImageContainer $imageUrl={imageUrl} />
+    <Container>
+        <Image $imageUrl={imageUrl} />
         <Name> {name} </Name>
-        <QuantityContainer>
-            <ArrowContainer onClick={removeItemHandler}>&#10094;</ArrowContainer>
+        <Quantity>
+            <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
             <Value>{quantity}</Value>
-            <ArrowContainer onClick={addItemHandler}>&#10095;</ArrowContainer>
-        </QuantityContainer>
+            <Arrow onClick={addItemHandler}>&#10095;</Arrow>
+        </Quantity>
         <Price>$ {price}</Price>
         <RemoveIcon onClick={clearItemHandler}>&#10005;</RemoveIcon>
-    </CheckOutItemContainer>
+    </Container>
   )
 }
 

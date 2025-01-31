@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CheckOutItemContainer = styled.div`
+export const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
   grid-template-areas: 
@@ -28,7 +28,7 @@ export const CheckOutItemContainer = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`
+export const Image = styled.div`
   background-image: ${({ $imageUrl }) => `url(${ $imageUrl })`};
   background-size: cover;
   background-position: center;
@@ -53,7 +53,7 @@ export const Name = styled.span`
   }
 `
 
-export const QuantityContainer = styled.div`
+export const Quantity = styled.div`
   width: 100%;
   display: flex;
   grid-area: quantity;
@@ -72,7 +72,7 @@ export const Price = styled.span`
   }
 `
 
-export const ArrowContainer = styled.div`
+export const Arrow = styled.div`
   cursor: pointer;
 `
 
